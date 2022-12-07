@@ -1,0 +1,19 @@
+'DNM-MODE' Usage
+=================
+If you are new to DNM and if the data is not large, you only need to add 
+the approach of loading data into 'divideDataset.m', and type 'run Main.m';
+Moreover, adjusting the value of parameters can further improve 
+the performance of model to manage the data.
+
+-popsize: set the population size (default 100)
+-Max_popsize_archive: set the archive size (default 100)
+-Max_iteration: set the number of generation (default 300)
+-M: set the number of dendritic layers (default 8)
+-F: set the scale factor of mutation (default 0.7)
+-CR: set the crossover probability (default 0.9)
+
+------------------------------- Reference ---------------------------------
+Ji, J., Tang, Y., Ma, L., Li, J., Lin, Q., Tang, Z., & Todo, Y. (2020). 
+Accuracy Versus Simplification in an Approximate Logic Neural Model. 
+IEEE Transactions on Neural Networks and Learning Systems.
+---------------------------------------------------------------------------

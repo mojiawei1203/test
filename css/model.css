@@ -1,0 +1,140 @@
+body{
+    font-family: "Times New Roman";
+}
+.navbar{
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    background-color: black;
+}
+
+.navbar a{
+    color: white;
+    /*background-color: darkturquoise;*/
+    border-left: 1px ;
+    width: 17.5%;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+.navbar a:hover{
+    background-color: #333 ;
+}
+
+@media screen and (max-width: 700px){
+    .navbar{
+        flex-direction: column;
+        position: static;
+    }
+    .navbar a{
+        width: 100%
+    }
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.row::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+[class*="col-"]{
+    float: left;
+    padding: 15px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 12.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 80%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+    /* 针对手机： */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+.title{
+    font-size: 30px;
+    padding: 1px;
+    background-color: lightblue;
+
+    width: 100%;
+    color: yellow;
+    text-align: center;
+}
+
+.text{
+    text-align: justify;
+    font-size: 20px;
+}
+
+div{
+    font-size: 20px;
+}
+
+
+
+
+
+.menu{
+    margin-top: 0px;
+    margin-right:10px;
+    margin-left:10px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.menu a{
+    margin-top:0;
+    display: block;
+    padding: 8px;
+    /*margin-bottom: 10px;*/
+    color: deepskyblue;
+    text-decoration: none;
+
+}
+
+
+a.active{
+    color: black;
+    background-color: #bbbbbb;
+}
+span{
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #0099cc;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+    height: 100px;
+    margin-top: 100px;
+    bottom: 0;
+    width: 100%;
+}
+
+h4{
+    margin-bottom: 0px;
+
+}

@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>resources</title>
+<!--    <%&#45;&#45;    <link rel="stylesheet" href="/css/resources.css">&#45;&#45;%>-->
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: "Times New Roman";
+        }
+        .navbar{
+            top: 0;
+            left: 0;
+            position: fixed;
+            width: 100%;
+            display: flex;
+            background-color: black;
+        }
+
+        .navbar a{
+            color: white;
+            /*background-color: darkturquoise;*/
+            border-left: 1px ;
+            width: 17%;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover{
+            background-color: #333 ;
+        }
+
+        @media screen and (max-width: 700px){
+            .navbar{
+                flex-direction: column;
+                position: static;
+            }
+            .navbar a{
+                width: 100%
+            }
+        }
+
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .row::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        [class*="col-"]{
+            float: left;
+            padding: 15px;
+        }
+
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        @media only screen and (max-width: 768px) {
+            /* 针对手机： */
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+
+
+
+
+
+        /*.leftside{*/
+        /*    flex: 50px;*/
+        /*    padding: 20px;*/
+        /*    background-color: pink;*/
+        /*}*/
+
+        /*.main{*/
+        /*    flex: 800px;*/
+        /*    padding: 20px;*/
+        /*    background-color: #bbbbbb;*/
+        /*}*/
+
+        /*.rightside{*/
+        /*    flex: 100px;*/
+        /*    padding: 20px;*/
+        /*    background-color: darkturquoise;*/
+        /*}*/
+
+
+
+
+
+
+        @media screen and (max-width: 700px) {
+            .row, .navbar {
+                flex-direction: column;
+            }
+        }
+
+        .menu{
+            margin-top: 10px;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu a{
+            display: block;
+            padding: 8px;
+            margin-bottom: 10px;
+            color: deepskyblue;
+            text-decoration: none;
+
+        }
+
+        .menu a:hover{
+            background-color: #bbbbbb;
+            color: grey;
+        }
+
+        .title{
+            font-size: 30px;
+            padding: 1px;
+            background-color: lightblue;
+
+            width: 100%;
+            color: yellow;
+            text-align: left;
+        }
+
+        span{
+
+            font-weight: bold;
+        }
+
+        li{
+            font-size: 20px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            text-align: justify;
+        }
+
+        li:last-child{
+            margin-bottom: 60px;
+        }
+
+        a.active{
+            color: black;
+            background-color: #bbbbbb;
+        }
+
+        .footer {
+            background-color: #0099cc;
+            color: #ffffff;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
+            height: 100px;
+            margin-top: 100px;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h3{
+            margin-bottom: 5px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<div class="navbar" id="top">
+    <a href="home.html" target="_blank">Home</a>
+    <a href="model.html" target="_blank">Model</a>
+    <a href="paper.html" target="_blank">Papers</a>
+    <a href="resources.html" target="_blank">Resources</a>
+    <a href="contributors.html" target="_blank">Contributors</a>
+    <a href="contact.html" target="_blank">Contact us</a>
+</div>
+
+
+<br><br>
+
+
+<div class="row">
+    <div class="col-2">
+
+    </div>
+
+    <div class="col-8" id="article" >
+        <p class="title" id="DNM-BP">Dendritic Neural Model</p>
+        <ul>
+            <li><span style="font-weight: bold">Abstract:</span>
+                DNM is employed to solve classification problems.
+                Since the DNM is a feed-forward model, and all the excitation 
+                functions are continuous and differentiable,
+                the Error Back-propagation (EBP) algorithm is used to train it,
+                whose learning rule is derived from the Least Squared Error
+                between the actual outputs and the desired targets.
+                Further, the DNM will be simplified and then be transformed
+                by a Logic Circuit Classifier (LCC), which consists of the
+                comparators and logic AND, OR and NOT gates.
+                Although the EBP algorithm may trap into local
+                minima occasionally, it has very fast convergence
+                speed and satisfactory optimization performances.
+            </li>
+            <li><span style="font-weight: bold" >Code Resource:</span>
+                  <a href="#">Link.</a>
+                　　　<span style="font-weight: bold" >
+                    Latest Update Date:</span>
+                2021.06.07</li>
+            <li>
+                <span style="font-weight: bold" >Citation:</span> Junkai Ji, Shangce Gao, Jiujun Cheng,
+                Zheng Tang, and Yuki Todo.
+                “An approximate logic neuron model with a dendritic
+                structure,” Neurocomputing 173 (2016): 1775-1783. Link
+            </li>
+        </ul>
+
+        <hr>
+        <p class="title" id="DNR">Dendritic Neural Regression</p>
+        <ul>
+            <li><span style="font-weight: bold">Abstract:</span>
+                The dendrite neural regression (DNR)
+                employs a novel weight to describe the dendrite strength,
+                which can enhance the regression ability of the model
+                significantly. A recently proposed optimization
+                algorithm named AMSGrad is utilized in DNR training.
+                AMSGrad is a variant of the Adam algorithm,
+                which can speed up the convergence of DNR during
+                the optimization procedure. The <span id="#DNR"> DNR </span>trained by the
+                AMSGrad algorithm (ADNR) has demonstrated excellent
+                and stable performance in the real regression problem.
+            </li>
+            <li><span style="font-weight: bold" >Code Resource:</span>
+                  <a href="#">Link.</a>
+                　　　<span style="font-weight: bold" >
+                    Latest Update Date:</span>2022.06.07
+            </li>
+            <li><span style="font-weight: bold" >Citation:</span>
+                Junkai Ji, Minhui Dong, Qiuzhen Lin,
+                and Kay Chen Tan. "Noninvasive Cuffless Blood Pressure
+                Estimation With Dendritic Neural Regression."
+                IEEE Transactions on Cybernetics, 2022. Accepted.
+            </li>
+        </ul>
+
+        <hr>
+        <p class="title" id="DNM-SMS">DNM Trained by the States of Matter Search Algorithm</p>
+        <ul>
+            <li><span style="font-weight: bold">Abstract:</span>
+                DNM is also applied to solve classification problems.
+                It is trained by a metaheuristic algorithm,
+                named the states of matter search (SMS) algorithm.
+                The evolutionary operations of SMS are based on the physical
+                principle of the thermal-energy motion ratio, and the whole
+                optimization process is divided into the following three
+                phases: the gas state, the liquid state and the solid state.
+                Each state has its own operations with different
+                exploration–exploitation ratios.
+                The SMS algorithm can be regarded as a more global
+                search approach. Empirical evidences have verified that
+                it can provide better training performance than several
+                state-of-the-art evolutionary algorithms, such as: Genetic
+                Algorithm (GA), Particle Swarm Optimization (PSO) and adaptive
+                differential evolution with optional external archive (JADE).
+            </li>
+            <li><span style="font-weight: bold" >Code Resource:</span>
+                  <a href="#">Link.</a>
+                　　　<span style="font-weight: bold" >
+                    Latest Update Date:</span>2021.06.07</li>
+            <li><span style="font-weight: bold" >Citation:</span>
+                Junkai Ji, Shuangbao Song, Yajiao Tang,
+                Shangce Gao, Zheng Tang, and Yuki Todo.
+                "Approximate logic neuron model trained by states of matter
+                search algorithm.
+                " Knowledge-Based Systems 163 (2019): 120-130. Link
+            </li>
+        </ul>
+
+        <hr>
+        <p class="title" id="DNM-MODE">DNM Trained by the Multi-objective Differential Evolution Algorithm</p>
+        <ul>
+            <li><span style="font-weight: bold">Abstract:</span>
+                The architecture of DNM affects the learning capacity,
+                generalization capability, computing time and approximation of
+                LCC. Thus, a Pareto-based multiobjective differential evolution
+                (MODE) algorithm is proposed to simultaneously optimize
+                DNM’s topology and weights. The mean squared error of the
+                training dataset and the model complexity are selected as
+                the two objectives of MODE. MODE can
+                generate a concise and accurate LCC for every specific task from DNM.
+            </li>
+            <li><span style="font-weight: bold" >Code Resource:</span>
+                  <a href="./code/MODE.zip">Link.</a>
+                　　　<span style="font-weight: bold" >
+                    Latest Update Date:</span>2022.06.07
+            </li>
+            <li><span style="font-weight: bold" >Citation:</span>
+                Junkai Ji, Yajiao Tang, Lijia Ma, Jianqiang Li,
+                Qiuzhen Lin, Zheng Tang, and Yuki Todo.
+                "Accuracy versus simplification in an approximate logic
+                neural model." IEEE Transactions on
+                Neural Networks and Learning Systems 32.11 (2020): 5194-5207. Link
+            </li>
+        </ul>
+        <hr>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-2 right" style="height: 100%" >
+        <div class="menu">
+            <h3><a href="#DNM-BP" id="a1" >DNM-BP</a></h3>
+            <h3><a href="#DNR" id="a2">DNR</a></h3>
+            <h3><a href="#DNM-SMS" id="a3">DNM-SMS</a></h3>
+            <h3><a href="#DNM-MODE" id="a4">DNM-MODE</a></h3>
+            <h3><a href="#top">return to top</a></h3>
+        </div>
+
+        <script>
+            window.onscroll=function () {
+                var scrollTop =document.documentElement.scrollTop||document.body.scrollTop
+                console.log("滚动距离"+scrollTop);
+                const list = document.querySelectorAll('.menu a')
+                if(scrollTop<250&&scrollTop>50){
+                    list.forEach(title=>{
+                        title.classList=[];
+                    })
+                    list[0].classList.add('active')
+                }else if(scrollTop>270&&scrollTop<750){
+                    list.forEach(title=>{
+                        title.classList=[];
+                    })
+                    list[1].classList.add('active')
+                }else if(scrollTop>760&&scrollTop<950){
+                    list.forEach(title=>{
+                        title.classList=[];
+                    })
+                    list[2].classList.add('active')
+                }else if(scrollTop>960&&scrollTop<1200){
+                    list.forEach(title=>{
+                        title.classList=[];
+                    })
+                    list[3].classList.add('active')
+                }
+
+
+            }
+
+
+
+
+            var caution=false
+
+            function setCookie(name,value,expires,path,domain,secure)
+
+            {
+
+                var curCookie=name+"="+escape(value) +
+
+                    ((expires)?";expires="+expires.toGMTString() : "") +
+
+                    ((path)?"; path=" + path : "") +
+
+                    ((domain)? "; domain=" + domain : "") +
+
+                    ((secure)?";secure" : "")
+
+                if(!caution||(name + "=" + escape(value)).length <= 4000)
+
+                {
+
+                    document.cookie = curCookie
+
+                }
+
+                else if(confirm("Cookie exceeds 4KB and will be cut!"))
+
+                {
+
+                    document.cookie = curCookie
+
+                }
+
+            }
+
+            function getCookie(name)
+
+            {
+
+                var prefix = name + "="
+
+                var cookieStartIndex = document.cookie.indexOf(prefix)
+
+                if (cookieStartIndex == -1)
+
+                {
+
+                    return null
+
+                }
+
+                var cookieEndIndex=document.cookie.indexOf(";",cookieStartIndex+prefix.length)
+
+                if(cookieEndIndex == -1)
+
+                {
+
+                    cookieEndIndex = document.cookie.length
+
+                }
+
+                return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+
+            }
+
+            function deleteCookie(name, path, domain)
+
+            {
+
+                if(getCookie(name))
+
+                {
+
+                    document.cookie = name + "=" +
+
+                        ((path) ? "; path=" + path : "") +
+
+                        ((domain) ? "; domain=" + domain : "") +
+
+                        "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+
+                }
+
+            }
+
+            function fixDate(date)
+
+            {
+
+                var base=new Date(0)
+
+                var skew=base.getTime()
+
+                if(skew>0)
+
+                {
+
+                    date.setTime(date.getTime()-skew)
+
+                }
+
+            }
+
+            var now=new Date()
+
+            fixDate(now)
+
+            now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+
+            var visits = getCookie("counter")
+
+
+
+            setCookie("counter", visits, now)
+
+
+        </script>
+
+
+
+    </div>
+
+</div>
+
+<div class="footer">
+    <p><script>document.write("您是到访的第" + visits + "位用户！")</script></p>
+    <div style="text-align: center">深圳大学大数据系统计算技术国家工程实验室</div>
+</div>
+
+<!--<div class="row">-->
+<!--    <div class="side">-->
+<!--        <h2>关于我</h2>-->
+<!--        <h5>我的照片：</h5>-->
+<!--        <div class="fakeimg" style="height:200px;">图像</div>-->
+<!--        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>-->
+<!--        <h3>More Text</h3>-->
+<!--        <p>Lorem ipsum dolor sit ame.</p>-->
+<!--        <div class="fakeimg" style="height:60px;">图像</div><br>-->
+<!--        <div class="fakeimg" style="height:60px;">图像</div><br>-->
+<!--        <div class="fakeimg" style="height:60px;">图像</div>-->
+<!--    </div>-->
+<!--    <div class="main">-->
+<!--        <h2>标题</h2>-->
+<!--        <h5>标题描述，2021 年 1 月 1 日</h5>-->
+<!--        <div class="fakeimg" style="height:200px;">图像</div>-->
+<!--        <p>一些文本..</p>-->
+<!--        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>-->
+<!--        <br>-->
+<!--        <h2>标题</h2>-->
+<!--        <h5>标题描述，2021 年 1 月 2 日</h5>-->
+<!--        <div class="fakeimg" style="height:200px;">图像</div>-->
+<!--        <p>一些文本..</p>-->
+<!--        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+</body>
+</html>

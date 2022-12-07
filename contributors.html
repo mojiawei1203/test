@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contributors</title>
+<!--    <%&#45;&#45;    <link rel="stylesheet" href="/css/contributors.css">&#45;&#45;%>-->
+    <style>
+
+
+        body{
+            font-family: "Times New Roman";
+        }
+        .navbar{
+            top:0;
+            left: 0;
+            position: fixed;
+            width: 100%;
+            display: flex;
+            background-color: black;
+        }
+
+        .navbar a{
+            color: white;
+            /*background-color: darkturquoise;*/
+            border-left: 1px ;
+            width: 17%;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover{
+            background-color: #333 ;
+        }
+
+
+        @media screen and (max-width: 700px){
+            .navbar{
+                flex-direction: column;
+                position: static;
+            }
+            .navbar a{
+                width: 100%
+            }
+        }
+
+
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .row::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        [class*="col-"]{
+            float: left;
+            padding: 15px;
+        }
+
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        @media only screen and (max-width: 768px) {
+            /* 针对手机： */
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+
+
+        .menu{
+            margin-top: 10px;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu a{
+            display: block;
+            padding: 8px;
+            margin-bottom: 10px;
+            color: deepskyblue;
+            text-decoration: none;
+
+        }
+
+        .menu a:hover{
+            background-color: #bbbbbb;
+            color: grey;
+        }
+        .profile{
+
+            font-size: 20px;
+            word-spacing: 8px;
+            text-align: justify;
+            margin-left: 200px;
+            margin-right: 20px;
+            border-left:1px solid black ;
+            padding-left: 60px;
+        }
+
+        @media screen and (min-width: 600px) {
+            p.profile {
+                font-size: 20px;
+            }
+            #img1{
+                width:854px;
+                height:744px;
+            }
+
+        }
+
+        @media screen and (max-width: 600px) {
+            p.profile {
+                font-size: 15px;
+                word-spacing: 2px;
+                text-align: justify;
+            }
+            #img1{
+                width: 500px;
+                height: 450px;
+            }
+
+        }
+
+        p div{
+
+            font-size: 20px;
+            text-align: justify;
+            margin-left: 200px;
+        }
+
+        img{
+            float: left;
+            height: 200px;
+            width: 150px;
+
+        }
+        #img1{
+            width:854px;
+            height:744px;
+        }
+        a.active{
+            color: black;
+            background-color: #bbbbbb;
+        }
+
+        .footer {
+            background-color: #0099cc;
+            color: #ffffff;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
+            height: 100px;
+            margin-top: 100px;
+            bottom: 0;
+            width: 100%;
+        }
+        h3{
+            margin-bottom: 5px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="navbar" id="top">
+    <a href="home.html" target="_blank">Home</a>
+    <a href="model.html" target="_blank">Model</a>
+    <a href="paper.html" target="_blank">Papers</a>
+    <a href="resources.html" target="_blank">Resources</a>
+    <a href="contributors.html" target="_blank">Contributors</a>
+    <a href="contact.html" target="_blank">Contact us</a>
+</div>
+
+
+
+
+<br><br>
+
+<div class="row">
+
+
+    <div class="col-10">
+        <hr>
+        <img src="./img/JunkaiJi.png" id="1">
+
+        <p class="profile">
+            Junkai Ji received the B.S. degree from Hefei University of technology,
+            Anhui,China, in 2013, and an M.S. degree and a D.E. degree from
+            University of Toyama, Toyama, Japan, in 2016 and 2018, respectively.
+            In 2019, he joined Shenzhen University, Shenzhen, China,
+            where he is currently a Research Associate in the College of Computer
+            Science and Software Engineering. His current research interests
+            include neural networks, evolutionary computation, Ab Initio
+            protein structure prediction and computer-aided drug design.
+            <br>
+            <br>
+            Email:<a>jijunkai@szu.edu.cn</a><br>
+            Goolescholar:<a href="https://scholar.google.com/citations?hl=zh-CN&user=jLfhEGcAAAAJ">
+                https://scholar.google.com/citations?hl=zh-CN&user=jLfhEGcAAAAJ</a>
+            <br>
+            Researchgate: <a href="https://www.researchgate.net/profile/Junkai-Ji" >
+                https://www.researchgate.net/profile/Junkai-Ji</a>
+        </p>
+
+        <hr>
+
+        <img src="./img/ZhengTang.png" id="2">
+        <p class="profile">
+            Zheng Tang received the B.S. degree from Zhejiang University,
+            Zhejiang, China, in 1982, and an M.S. degree and a D.E. degree from
+            Tshinghua University, Beijing, China, in 1984 and 1988, respectively.
+            From 1988 to 1989, he was an Instructor in the Institute of
+            Microelectronics at Tshinhua University. From 1990 to 1999,
+            he was an Associate Professor in the Department of Electrical
+            and Electronic Engineering, Miyazaki University, Miyazaki, Japan.
+            In 2000, he joined Toyama University, Toyama, Japan,
+            where he is currently a Professor in the Department of Intellectual
+            Information Systems. His current research interests include intellectual
+            information technology, neural networks, and optimizations.
+            <br>
+            <br>
+            Email:<a >zhengtang2000@hotmail.com</a><br>
+            Researchgate:<a href="https://www.researchgate.net/profile/Tang-Zheng-2/research">
+            https://www.researchgate.net/profile/Tang-Zheng-2/research</a><br>
+            Home:<a href="https://evaweb.u-toyama.ac.jp/html/612_ja.html">https://evaweb.u-toyama.ac.jp/html/612_ja.html</a>
+        </p>
+
+        <hr>
+
+        <img src="./img/YukiTodo.png" id="3">
+        <p class="profile">
+            Yuki Todo received the B.S. degree from Zhejiang University, Zhejiang, China,
+            the M.S. degree from Beijing University of Posts and Telecommunications, Beijing, China,
+            and the D.E. degree from Kanazawa University, Kanazawa, Japan, in 1983, 1986, and 2005,
+            respectively. From 1987 to 1989, she was an Assistant Professor with the Institute of
+            Microelectronics, Shanghai Jiaotong University, Shanghai, China. From 1989 to 1990,
+            she was a Research Student at Nagoya University, Nagoya, Japan. From 1990 to 2000,
+            she was a Senior Engineer with Sanwa Newtech Inc., Miyazaki, Japan. From 2000 to 2011,
+            she worked with Tateyama Systems Institute, Toyama, Japan. In 2012, she joined
+            Kanazawa University, where she is now an Associate Professor with the School of
+            Electrical and Computer Engineering. Her current research interests include
+            multiple-valued logic, neural networks, and optimization.
+            <br>
+            <br>
+            Email:<a>yktodo@ec.t.kanazawa-u.ac.jp</a><br>
+            Researchgate:<a href="https://www.researchgate.net/profile/Yuki-Todo-2">
+            https://www.researchgate.net/profile/Yuki-Todo-2
+        </a><br>
+            Home:<a href="https://ridb.kanazawa-u.ac.jp/public/detail.php?id=3333">https://ridb.kanazawa-u.ac.jp/public/detail.php?id=3333
+        </a>
+        </p>
+
+        <hr>
+
+
+    </div>
+
+    <div class="col-1 right">
+        <div class="menu">
+            <h3><a href="#1" id="a1">Junkai　Ji</a></h3>
+            <h3><a href="#2" id="a2">Zheng　Tang</a></h3>
+            <h3><a href="#3" id="a3">Yuki　Todo</a></h3>
+            <h3><a href="#top">return to top</a></h3>
+        </div>
+    </div>
+    <script>
+        window.onscroll=function () {
+            var scrollTop =document.documentElement.scrollTop||document.body.scrollTop
+            console.log("滚动距离"+scrollTop);
+            const list = document.querySelectorAll('.menu a')
+            if(scrollTop<120){
+                list.forEach(profile=>{
+                    profile.classList=[];
+                })
+                list[0].classList.add('active');
+            }else if(scrollTop>125&&scrollTop<300){
+                list.forEach(profile=>{
+                    profile.classList=[];
+                })
+                list[1].classList.add('active')
+            }else if(scrollTop>305&&scrollTop<750){
+                list.forEach(profile=>{
+                    profile.classList=[];
+                })
+                list[2].classList.add('active')
+            }
+
+
+        }
+
+
+        var caution=false
+
+        function setCookie(name,value,expires,path,domain,secure)
+
+        {
+
+            var curCookie=name+"="+escape(value) +
+
+                ((expires)?";expires="+expires.toGMTString() : "") +
+
+                ((path)?"; path=" + path : "") +
+
+                ((domain)? "; domain=" + domain : "") +
+
+                ((secure)?";secure" : "")
+
+            if(!caution||(name + "=" + escape(value)).length <= 4000)
+
+            {
+
+                document.cookie = curCookie
+
+            }
+
+            else if(confirm("Cookie exceeds 4KB and will be cut!"))
+
+            {
+
+                document.cookie = curCookie
+
+            }
+
+        }
+
+        function getCookie(name)
+
+        {
+
+            var prefix = name + "="
+
+            var cookieStartIndex = document.cookie.indexOf(prefix)
+
+            if (cookieStartIndex == -1)
+
+            {
+
+                return null
+
+            }
+
+            var cookieEndIndex=document.cookie.indexOf(";",cookieStartIndex+prefix.length)
+
+            if(cookieEndIndex == -1)
+
+            {
+
+                cookieEndIndex = document.cookie.length
+
+            }
+
+            return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+
+        }
+
+        function deleteCookie(name, path, domain)
+
+        {
+
+            if(getCookie(name))
+
+            {
+
+                document.cookie = name + "=" +
+
+                    ((path) ? "; path=" + path : "") +
+
+                    ((domain) ? "; domain=" + domain : "") +
+
+                    "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+
+            }
+
+        }
+
+        function fixDate(date)
+
+        {
+
+            var base=new Date(0)
+
+            var skew=base.getTime()
+
+            if(skew>0)
+
+            {
+
+                date.setTime(date.getTime()-skew)
+
+            }
+
+        }
+
+        var now=new Date()
+
+        fixDate(now)
+
+        now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+
+        var visits = getCookie("counter")
+
+
+
+        setCookie("counter", visits, now)
+
+
+    </script>
+</div>
+
+
+
+</div>
+<div class="footer">
+    <p><script>document.write("您是到访的第" + visits + "位用户！")</script></p>
+    <div style="text-align: center">深圳大学大数据系统计算技术国家工程实验室</div>
+</div>
+
+</body>
+</html>

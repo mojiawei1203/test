@@ -1,0 +1,16 @@
+'DNM-BP' Usage
+=================
+If you are new to DNM and if the data is not large, you only need to add 
+the approach of loading data into 'divideDataset.m', and type 'run Main.m';
+Moreover, adjusting the value of parameters can further improve 
+the performance of model to manage the data.
+
+-Max_Gen: set the number of generation (default 1000)
+-ita: set learning rate of BP (default 0.05)
+-M: set the number of dendritic layers (default 8)
+
+------------------------------- Reference --------------------------------
+Ji, J., Gao, S., Cheng, J., Tang, Z., & Todo, Y. (2016). 
+An approximate logic neuron model with a dendritic structure. 
+Neurocomputing, 173, 1775-1783.
+--------------------------------------------------------------------------

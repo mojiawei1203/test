@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>model</title>
+<!--    <%&#45;&#45;    <link rel="stylesheet" href="/css/model.css">&#45;&#45;%>-->
+    <style>
+        body{
+            font-family: "Times New Roman";
+        }
+        .navbar{
+            left: 0;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            display: flex;
+            background-color: black;
+        }
+
+        .navbar a{
+            color: white;
+            /*background-color: darkturquoise;*/
+            border-left: 1px ;
+            width: 17.5%;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover{
+            background-color: #333 ;
+        }
+
+        @media screen and (max-width: 700px){
+            .navbar{
+                flex-direction: column;
+                position: static;
+            }
+            .navbar a{
+                width: 100%
+            }
+        }
+
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .row::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        [class*="col-"]{
+            float: left;
+            padding: 15px;
+        }
+
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 12.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 80%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        @media only screen and (max-width: 768px) {
+            /* 针对手机： */
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+
+        .title{
+            font-size: 30px;
+            padding: 1px;
+            background-color: lightblue;
+
+            width: 100%;
+            color: yellow;
+            text-align: center;
+        }
+
+        .text{
+            text-align: justify;
+            font-size: 20px;
+        }
+
+        div{
+            font-size: 20px;
+        }
+
+
+
+
+
+        .menu{
+            margin-top: 0px;
+            margin-right:10px;
+            margin-left:10px;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .menu a{
+            margin-top:0;
+            display: block;
+            padding: 8px;
+            /*margin-bottom: 10px;*/
+            color: deepskyblue;
+            text-decoration: none;
+
+        }
+
+
+        a.active{
+            color: black;
+            background-color: #bbbbbb;
+        }
+        span{
+            font-weight: bold;
+        }
+
+        .footer {
+            background-color: #0099cc;
+            color: #ffffff;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
+            height: 100px;
+            margin-top: 100px;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h4{
+            margin-bottom: 0px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="navbar" id="top">
+    <a href="home.html" target="_blank">Home</a>
+    <a href="model.html" target="_blank">Model</a>
+    <a href="paper.html" target="_blank">Papers</a>
+    <a href="resources.html" target="_blank">Resources</a>
+    <a href="contributors.html" target="_blank">Contributors</a>
+    <a href="contact.html" target="_blank">Contact us</a>
+</div>
+
+
+<br><br>
+
+<div class="row">
+
+    <div class="col-2" style="border-right: 1px solid black;">
+
+    </div>
+
+    <div class="col-8">
+        <p class="title" id="1" style="margin-top: 5px">Model Description</p>
+        <p class="text">
+            DNM is a single neural model with a plastic dendritic structure,
+            which was inspired by the realistic neural cell model in biological research.
+            The structural description of DNM is illustrated in Fig. 1. As shown in Fig. 1,
+            DNM has four layers, namely, the synapse layer, the dendrite layer, the membrane layer and the soma body.
+        </p>
+        <p style="text-align: center"><img src="./img/DNM.png" style="width: 500px;height: 313px"></p>
+        <p style="text-align: center">Fig. 1. Structure of DNM.</p>
+        <p class="text">
+            <span> Synaptic layer</span>: each synapse connects one of the feature attributes to receive the input
+            signals from the training samples. A modified sigmoid function with specified
+            connection parameters is adopted to describe the process, which is expressed by:
+        </p>
+        <p style="text-align: center"><img src="./img/gongshi1.png" width="536"></p>
+        <p class="text">
+        <div>\begin{equation}</div>
+        <div>Y_{i,m}=\frac{1}{1+e^{-k(w_{i,m}x_i-q_{i,m})}},</div>
+        <div>\label{Eq1}</div>
+        <div>\end{equation}</div>
+        where $x_i$ is the $i$-th ($i=1, 2, ..., I$) input signal. $Y_{i,m}$ represents
+        the output of the $i$-th synapse layer on the $m$-th branch of dendrites, and its range is [0,1].
+        In addition, $w_{i,m}$ and $q_{i,m}$ denote the connection parameters, which are randomly generated
+        in the initialization and need to be trained by the learning algorithm.</p>
+
+        <p class="text">
+            <span>Dendrite layer</span>: Dendritic structure plays an important role in neural computation.
+            Different neurons have distinct dendritic structures, and even a small variation
+            in dendritic morphology produces a great change in neural function. Thus, to realize
+            the dendritic morphology's plasticity, the simplest nonlinear operator named ‘multiplication'
+            is adopted in<br>
+            DNM:
+        </p>
+        <p style="text-align: center"><img src="./img/gongshi2.png" width="526"></p>
+        <div>\begin{equation}</div>
+        <div>Z_{m}= \prod_{i=1}^{I}Y_{i,m}.</div>
+        <div>\end{equation}</div>
+        <p class="text">
+            <span>Membrane layer</span>: On the membrane layer, the signals from each branch of dendritic arbor converge
+            and interact with each other. The interaction mechanism of the membrane
+            layer can be described by the summation operation which is shown as follows:
+        </p>
+        <p style="text-align: center"><img src="./img/gongshi3.png" width="529"></p>
+        <div>\begin{equation}</div>
+        <div>V= \sum_{m=1}^{M}Z_{m}.</div>
+        <div>\end{equation}</div>
+        <p class="text">
+            <span>Soma body</span>: Soma body is the core part of a single neural model. Specially, it integrates
+            the signals from the membrane layer. Then, the soma compares the results with the threshold
+            of the soma; if it is larger, the neuron will fire; otherwise, it will not fire.
+            The function of the soma body is expressed by:
+        </p>
+        <p style="text-align: center"><img src="./img/gongshi4.png" width="530"></p>
+        <p class="text">
+            where $k_{soma}$ and $\theta _{soma}$ are user-defined parameters of the soma body.
+            To make the output of the neuron approximate to 1 or 0, $k_{soma}$ and $\theta _{soma}$ are
+            set to be 10 and 0.5, respectively.
+        </p>
+
+        <p class="title" id="2">Connection cases</p>
+        <p class="text">
+            As introduced above, $(w, q)$ are the only parameters which determine the final model
+            architecture of the DNM for each specific task. Different values of $(w, q)$ equip the
+            synapses with four different connection cases, namely the Direct connection, Inverse connection,
+            Constant 1 connection and Constant 0 connection. The symbol of each connection case is presented in Fig.
+            2. The specific description of these connection cases is shown below:
+        </p>
+        <p style="text-align: center"><img src="./img/Fig2.png" width="529"></p>
+        <p style="text-align: center">Fig. 2. Four connection cases of the synaptic layer.</p>
+        <p class="text">
+            <span>Direct connection</span>: $C_\mathcal{D}=\{(w, q)|0<q_>{i,m}<w_>{i,m}\}$.
+            In the direct connection case, if the input signal $x_i$ exceeds the synaptic
+            threshold $\theta_{i,m}$, the synapse outputs `1'. Otherwise, it outputs `0'.
+        </p>
+        <p class="text">
+            <span>Inverse connection</span>: $C_\mathcal{I}=\{(w, q)|w_{i,m}<q_>{i,m}<0\}$. Contrary to direct connection,
+            if $x_i$ is greater than $\theta_{i,m}$, the synapse outputs `0'. Otherwise, it outputs `1'.
+        </p>
+
+        <p class="text">
+            <span>Constant-1 connection</span>: $C_1=\{(w, q)|q_{i,m}<0<w_>{i,m}\}$ $\bigcup$ $\{(w, q)|q_{i,m}<w_>{i,m}<0\}$.
+            In this case, no matter what value the input is, the output of the synapse will remain '1'.
+        </p>
+
+        <p class="text">
+            <span>Constant-0 connection</span>: $C_0=\{(w, q)|0<w_>{i,m}<q_>{i,m}\} $ $\bigcup$ $ \{(w, q)|w_{i,m}<0<q_>{i,m}\}$.
+            Similarly, a constant-0 connection implies that the output of the synapse remains `0',
+            regardless of the input.
+        </p>
+
+
+        <p class="title" id="3">Neural pruning scheme</p>
+        <p class="text">Depending on the connection cases of the synaptic layer,
+            DNM can discard unnecessary synapses and useless branches of dendrites
+            by implementing the neural pruning scheme that contains dendritic pruning and synaptic pruning.
+        </p>
+
+        <p class="text">
+            <span>Dendritic pruning</span>: As shown in Fig. 3, there are two branches of dendrites ($B_1$ and $B_2$) in
+            the structure of DNM in Step 1. On the branch $B_2$, the synaptic layer of the input $x_2$ is in the
+            Constant 0 connection case, and the output of this synapse remains at 0. Since the computation operation
+            of the dendrite layer is multiplication, regardless of what the values of $x_1$ and $x_2$ are, the output
+            of $B_2$ will still be remain constant at 0, and it has no contribution on the final results of the soma;
+            therefore, the result of this branch should be ignored. Thus, once a branch of dendrites has a synaptic
+            input that is in the Constant 0 connection after learning, the whole branch needs to be discarded in DNM.
+            This simplification scheme is named `dendritic pruning.'
+        </p>
+        <p style="text-align: center"><img src="./img/Fig3.png" width="529" ></p>
+        <p style="text-align: center">Fig. 3. Simulation of dentritic pruning
+        <p class="text">
+            <span>Synaptic pruning</span>: In Fig. 4, DNM has two branches of dendrites ($B_1$ and $B_2$) in the structure,
+            and the branch $B_2$ has a Constant 1 connection input. As introduced above, regardless of what
+            the value of the input $x_2$ is, the output of this synapse is always equal to 1. It has no influence
+            on the results of the branch. Thus, the final result of soma should ignore the input $x_2$ on this branch,
+            and these kinds of synapses that are in the Constant 1 connection case should be discarded.
+            We define this simplification scheme as `synaptic pruning.'
+        </p>
+        <p style="text-align: center"><img src="./img/Fig4.png" width="529" ></p>
+        <p style="text-align: center">Fig. 4. Simulation of a synaptic pruning</p>
+
+        <p class="title" id="4">Approximation logic scheme</p>
+        <p class="text">In fact, the simplified structure of DNM can be substituted by a logic circuit
+            classifier (LCC). To be specific, the synaptic layer works as an analog-to-digital converter,
+            named a `comparator,' which compares the input signal with its threshold $\theta$.
+            If the input $x_{i,m}$ is larger than $\theta_{i,m}$, the comparator will output 1. Otherwise,
+            it will output 0. After neural pruning, there are only two kinds of synapses left in the structure.
+            The direct synapses can be replaced by the comparators, and the inverse synapses will
+            be substituted by the combination of the comparators and the logic NOT gates.
+            The value of $\theta_{i,m}$ is calculated by the trained parameters
+            $w_{i,m}$ and $q_{i,m}$ in the synaptic layer, which can be formulated as:
+        </p>
+        <p style="text-align: center"><img src="./img/gongshi5.png" width="528"></p>
+        <div>\begin{equation}</div>
+        <div>\theta_{i,m}=\frac{q_{i,m}}{w_{i,m}}.</div>
+        <div>\end{equation}</div>
+
+        <p class="text">
+            Through the comparators, all the input signals will be transformed
+            into binary variables. Since the operation of the dendritic layer is multiplication,
+            each branch of dendrites is made identical to the logical AND gates. The result of the branch
+            is 1 if and only if all the inputs are 1. As the membrane layer uses the summation operation
+            to collect the dendritic signals, it is equal to the logical $OR$ gate. Because the outputs
+            are all binary variables, the computation of the soma body can be ignored. By the approximate
+            logic scheme, the simplified structure of DNM can be substituted by an LCC.
+        </p>
+        <p class="text">
+            Fig. 5 illustrates a simplified ALNM and its corresponding LCC.
+            It can be found that branch $B_1$ has two left synapses.
+            The synapse of the input $x_1$ is direct, and it is replaced by a comparator.
+            The synapse of $x_3$ is inverse, and it is replaced by a comparator and a logic NOT gate.
+            Then, the outputs of $x_1$ and $x_3$ are connected by the logic AND operation. Similarly,
+            the approximation scheme is implemented on the branch $B_2$. Next, the outputs of $B_1$
+            and $B_2$ are connected by the logic OR gate. In this way, the final outputs of the logic
+            circuit can be regarded as the classification results.
+        </p>
+        <p style="text-align: center"><img src="./img/Fig5.png" width="528" ></p>
+        <p style="text-align: center">Fig. 5. Simulation of neural approximation</p>
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="col-1 right" style="border-left: 1px solid black;">
+        <div class="menu">
+            <h4><a href="#1" id="a1">Model Description</a></h4>
+            <h4><a href="#2" id="a2">Connection cases</a></h4>
+            <h4><a href="#3" id="a3">Neural pruning scheme</a></h4>
+            <h4><a href="#4" id="a4">Approximation logic scheme</a></h4>
+            <h4><a href="#1">return to top</a></h4>
+
+        </div>
+    </div>
+
+    <script>
+        window.onscroll=function () {
+            var scrollTop =document.documentElement.scrollTop||document.body.scrollTop
+            console.log("滚动距离"+scrollTop);
+            const list = document.querySelectorAll('.menu a')
+            if(scrollTop<1800){
+                list.forEach(title=>{
+                    title.classList=[];
+                })
+                list[0].classList.add('active')
+            }else if(scrollTop>1810&&scrollTop<2500){
+                list.forEach(title=>{
+                    title.classList=[];
+                })
+                list[1].classList.add('active')
+            }else if(scrollTop>2250&&scrollTop<3450){
+                list.forEach(title=>{
+                    title.classList=[];
+                })
+                list[2].classList.add('active')
+            }else if(scrollTop>3460&&scrollTop<3700){
+                list.forEach(title=>{
+                    title.classList=[];
+                })
+                list[3].classList.add('active')
+            }
+
+
+        }
+
+
+
+        var caution=false
+
+        function setCookie(name,value,expires,path,domain,secure)
+
+        {
+
+            var curCookie=name+"="+escape(value) +
+
+                ((expires)?";expires="+expires.toGMTString() : "") +
+
+                ((path)?"; path=" + path : "") +
+
+                ((domain)? "; domain=" + domain : "") +
+
+                ((secure)?";secure" : "")
+
+            if(!caution||(name + "=" + escape(value)).length <= 4000)
+
+            {
+
+                document.cookie = curCookie
+
+            }
+
+            else if(confirm("Cookie exceeds 4KB and will be cut!"))
+
+            {
+
+                document.cookie = curCookie
+
+            }
+
+        }
+
+        function getCookie(name)
+
+        {
+
+            var prefix = name + "="
+
+            var cookieStartIndex = document.cookie.indexOf(prefix)
+
+            if (cookieStartIndex == -1)
+
+            {
+
+                return null
+
+            }
+
+            var cookieEndIndex=document.cookie.indexOf(";",cookieStartIndex+prefix.length)
+
+            if(cookieEndIndex == -1)
+
+            {
+
+                cookieEndIndex = document.cookie.length
+
+            }
+
+            return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+
+        }
+
+        function deleteCookie(name, path, domain)
+
+        {
+
+            if(getCookie(name))
+
+            {
+
+                document.cookie = name + "=" +
+
+                    ((path) ? "; path=" + path : "") +
+
+                    ((domain) ? "; domain=" + domain : "") +
+
+                    "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+
+            }
+
+        }
+
+        function fixDate(date)
+
+        {
+
+            var base=new Date(0)
+
+            var skew=base.getTime()
+
+            if(skew>0)
+
+            {
+
+                date.setTime(date.getTime()-skew)
+
+            }
+
+        }
+
+        var now=new Date()
+
+        fixDate(now)
+
+        now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+
+        var visits = getCookie("counter")
+
+
+
+        setCookie("counter", visits, now)
+
+
+    </script>
+
+</div>
+</div>
+<div class="footer">
+    <p><script>document.write("您是到访的第" + visits + "位用户！")</script></p>
+    <p style="text-align: center">深圳大学大数据系统计算技术国家工程实验室</p>
+</div>
+</body>
+</html>

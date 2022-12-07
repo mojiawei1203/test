@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,user-scalable=yes,initial-scale=0.3,maximum-scale=0.7,shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--   <link rel="stylesheet" href="/css/home.css"> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar{
+            top:0;
+            left: 0;
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            display: flex;
+            background-color: black;
+        }
+
+        .navbar a{
+            color: white;
+            /*background-color: darkturquoise;*/
+            border-left: 1px ;
+            width: 16.66%;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover{
+            background-color: #333 ;
+        }
+
+        @media screen and (max-width: 700px){
+            .navbar{
+                flex-direction: column;
+                position: static;
+            }
+            .navbar a{
+                width: 100%
+            }
+        }
+
+        .header{
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            min-width: 1100px;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .text{
+            position: absolute;
+            right: 50px;
+            top:200px;
+            font-family: "Times New Roman";
+            color: white;
+            font-size: 30px;
+            z-index: 2;
+        }
+
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .row::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        [class*="col-"]{
+            float: left;
+            padding: 15px;
+        }
+
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 80%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        @media only screen and (max-width: 768px) {
+            /* 针对手机： */
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+
+        .title{
+            font-size: 30px;
+            padding: 1px;
+            background-color: lightblue;
+
+            width: 100%;
+            color: yellow;
+            text-align: center;
+        }
+
+        .word{
+            text-align: justify;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        li{
+            font-size: 20px;
+            margin-bottom: 10px;
+            margin-right: 20px;
+            margin-left: 40px;
+            text-align: justify;
+        }
+
+        li:last-child{
+            margin-bottom: 60px;
+        }
+
+
+
+        .menu{
+            margin-top: 200px;
+            position: sticky;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu a{
+            font-size: 20px;
+            display: block;
+            padding: 8px;
+            margin-bottom: 10px;
+            color: deepskyblue;
+            text-decoration: none;
+
+        }
+
+        .menu a:hover{
+            background-color: #bbbbbb;
+            color: grey;
+        }
+        a.active{
+            background-color: #bbbbbb;
+            color: black;
+        }
+        .footer {
+            margin-top:200px;
+            background-color: #0099cc;
+            color: #ffffff;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
+            height: 100px;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="navbar" id="top">
+    <a href="home.html" target="_blank">Home</a>
+    <a href="model.html" target="_blank">Model</a>
+    <a href="paper.html" target="_blank">Papers</a>
+    <a href="resources.html" target="_blank">Resources</a>
+    <a href="contributors.html" target="_blank">Contributors</a>
+    <a href="contact.html" target="_blank">Contact us</a>
+</div>
+
+
+
+
+
+<div class="header" id="header">
+    <img src="./img/shouye.png" width="1400px"  >
+    <div class="text">
+        To the best of our knowledge,<br><br><br><br>
+        <a href="model.jsp" target="_blank" style="font-weight:bold;font-size: 50px;text-decoration: none;color: white";>Dendritic neural model<br>
+            <span style="font-size:30px">（树突状神经元模型）</a><br><br><br>
+        is the <span style="font-weight: bold;font-size: 45px">fastest</span> machine learning technique<br>
+        in the literature.
+    </div>
+</div>
+
+<br><br>
+<div class="row">
+    <div class="col-2" style="border-right: 1px solid black">
+
+    </div>
+    <div class="col-8">
+        <p class="title" id="1">Dendritic Neuron Model</p>
+        <p class="word">Dendritic Neuron Model (DNM) is a novel single neuron model with plastic dendritic morphology. Inspired by biological
+            phenomena of neurons in vivo. the neural structure of DNM is composed of
+            four layers, namely, the synaptic layer, the dendritic layer,
+            the membrane layer and the cell body. Each layer owns diverse
+            excitation functions to carry out corresponding neural 
+            functions. Theoretical and empirical evidence demonstrates
+            the DNM can provide satisfactory performances on various
+            practical applications, such as computer-aided medical
+            diagnosis, business risk assessment and financial time
+            series prediction.
+        </p>
+
+        <p class="title" id="2">Distinctive Features of the DNM</p>
+        <p class="word">There are numbers of distinctive features distinguishing the DNM
+            from other conventional artificial neural networks, which
+            have been summarized below:
+        </p>
+        <ul>
+            <li>
+                The DNM takes into consideration a vast and plastic dendritic
+                tree in the structural morphology of a single neuron.
+            </li>
+            <li>
+                Through a neural pruning scheme, the DNM can eliminate
+                superfluous synapses and dendritic branches to simplify
+                its architecture and form an unique neuron morphology for
+                each specific task.
+            </li>
+            <li>
+                Through a logic approximation scheme, the DNM can
+                transform the simplified structure into Logic Circuit
+                Classifiers (LCCs), which merely consist of the comparators
+                and logic AND, OR and NOT gates.
+            </li>
+            <li>
+                The LCC executes the calculations entirely in binary
+                without sacrificing model performance, and it has
+                extremely fast computation speed and low computational
+                costs.
+            </li>
+            <li>
+                The LCC has strong advantages in solving
+                the problems with high-speed data streams,
+                compared with other machine learning algorithms
+                requiring floating-point calculations.
+            </li>
+            <li>
+                The LCC is easy to implement for large-scale parallel computing on
+                hardware, such as field programmable gate array (FPGA) and
+                very large scale integration (VLSI).
+            </li>
+        </ul>
+
+
+    </div>
+
+    <div class="col-2" style="border-left:1px solid black">
+        <div class="menu">
+            <h5><a href="#1" id="a1">Dendritic Neuron Model</a></h5>
+            <h5><a href="#2" id="a2">Distinctive Features of the DNM</a></h5>
+            <h5><a href="#header">return to top</a></h5>
+        </div>
+
+        <script>
+            window.onscroll=function () {
+                var scrollTop =document.documentElement.scrollTop||document.body.scrollTop
+                console.log("滚动距离"+scrollTop);
+                const list = document.querySelectorAll('.menu a')
+                if(scrollTop>800&&scrollTop<900){
+                    list.forEach(title=>{
+                        title.classList=[];
+                    })
+                    list[0].classList.add('active')
+                }else if(scrollTop>910&&scrollTop<1100){
+                    list.forEach(title=>{
+                        title.classList=[];
+                    })
+                    list[1].classList.add('active')
+                }
+
+
+            }
+
+
+            var caution=false
+
+            function setCookie(name,value,expires,path,domain,secure)
+
+            {
+
+                var curCookie=name+"="+escape(value) +
+
+                    ((expires)?";expires="+expires.toGMTString() : "") +
+
+                    ((path)?"; path=" + path : "") +
+
+                    ((domain)? "; domain=" + domain : "") +
+
+                    ((secure)?";secure" : "")
+
+                if(!caution||(name + "=" + escape(value)).length <= 4000)
+
+                {
+
+                    document.cookie = curCookie
+
+                }
+
+                else if(confirm("Cookie exceeds 4KB and will be cut!"))
+
+                {
+
+                    document.cookie = curCookie
+
+                }
+
+            }
+
+            function getCookie(name)
+
+            {
+
+                var prefix = name + "="
+
+                var cookieStartIndex = document.cookie.indexOf(prefix)
+
+                if (cookieStartIndex == -1)
+
+                {
+
+                    return null
+
+                }
+
+                var cookieEndIndex=document.cookie.indexOf(";",cookieStartIndex+prefix.length)
+
+                if(cookieEndIndex == -1)
+
+                {
+
+                    cookieEndIndex = document.cookie.length
+
+                }
+
+                return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+
+            }
+
+            function deleteCookie(name, path, domain)
+
+            {
+
+                if(getCookie(name))
+
+                {
+
+                    document.cookie = name + "=" +
+
+                        ((path) ? "; path=" + path : "") +
+
+                        ((domain) ? "; domain=" + domain : "") +
+
+                        "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+
+                }
+
+            }
+
+            function fixDate(date)
+
+            {
+
+                var base=new Date(0)
+
+                var skew=base.getTime()
+
+                if(skew>0)
+
+                {
+
+                    date.setTime(date.getTime()-skew)
+
+                }
+
+            }
+
+            var now=new Date()
+
+            fixDate(now)
+
+            now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+
+            var visits = getCookie("counter")
+
+            if(!visits)
+
+            {
+
+                visits=1;
+
+            }
+
+            else
+
+            {
+
+                visits=parseInt(visits)+1;
+
+            }
+
+            setCookie("counter", visits, now)
+
+        </script>
+
+    </div>
+
+
+</div>
+<br><br>
+<div class="footer">
+    <p><script>document.write("您是到访的第" + visits + "位用户！")</script></p>
+    <br>
+    <p style="text-align: center">深圳大学大数据系统计算技术国家工程实验室</p>
+</div>
+</body>
+
+</html>
