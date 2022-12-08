@@ -155,7 +155,7 @@ MathJax.Hub.Config({
             color: black;
             background-color: #bbbbbb;
         }
-        span .title{
+        span .title1{
             font-weight: bold;
         }
 
@@ -208,7 +208,7 @@ MathJax.Hub.Config({
         <p style="text-align: center"><img src="./img/DNM.png" style="width: 500px;height: 313px"></p>
         <p style="text-align: center">Fig. 1. Structure of DNM.</p>
         <p class="text">
-            <span class="title"> Synaptic layer</span>: each synapse connects one of the feature attributes to receive the input
+            <span class="title1"> Synaptic layer</span>: each synapse connects one of the feature attributes to receive the input
             signals from the training samples. A modified sigmoid function with specified
             connection parameters is adopted to describe the process, which is expressed by:
         </p>
@@ -226,7 +226,7 @@ MathJax.Hub.Config({
         in the initialization and need to be trained by the learning algorithm.</p>
 
         <p class="text">
-            <span class="title">Dendrite layer</span>: Dendritic structure plays an important role in neural computation.
+            <span class="title1">Dendrite layer</span>: Dendritic structure plays an important role in neural computation.
             Different neurons have distinct dendritic structures, and even a small variation
             in dendritic morphology produces a great change in neural function. Thus, to realize
             the dendritic morphology's plasticity, the simplest nonlinear operator named ‘multiplication'
@@ -240,7 +240,7 @@ MathJax.Hub.Config({
             \end{equation}
         </p>
         <p class="text">
-            <span class="title">Membrane layer</span>: On the membrane layer, the signals from each branch of dendritic arbor converge
+            <span class="title1">Membrane layer</span>: On the membrane layer, the signals from each branch of dendritic arbor converge
             and interact with each other. The interaction mechanism of the membrane
             layer can be described by the summation operation which is shown as follows:
         </p>
@@ -251,7 +251,7 @@ MathJax.Hub.Config({
         \end{equation}
         </p>
         <p class="text">
-            <span class="title">Soma body</span>: Soma body is the core part of a single neural model. Specially, it integrates
+            <span class="title1">Soma body</span>: Soma body is the core part of a single neural model. Specially, it integrates
             the signals from the membrane layer. Then, the soma compares the results with the threshold
             of the soma; if it is larger, the neuron will fire; otherwise, it will not fire.
             The function of the soma body is expressed by:
@@ -279,35 +279,35 @@ MathJax.Hub.Config({
         <p style="text-align: center"><img src="./img/Fig2.png" width="529"></p>
         <p style="text-align: center">Fig. 2. Four connection cases of the synaptic layer.</p>
         <p class="text">
-            <span class="title">Direct connection</span>: <span>$C_\mathcal{D}=\{(w, q)|0< q_{i,m}< w_{i,m}\}$</span>.
+            <span class="title1">Direct connection</span>: <span>$C_\mathcal{D}=\{(w, q)|0< q_{i,m}< w_{i,m}\}$</span>.
             In the direct connection case, if the input signal $x_i$ exceeds the synaptic
             threshold $\theta_{i,m}$, the synapse outputs `1'. Otherwise, it outputs `0'.
         </p>
         <p class="text">
-            <span class="title">Inverse connection</span>: <span>$C_\mathcal{I}=\{(w, q)|w_{i,m}< q_{i,m}<0\}$</span>. Contrary to direct connection,
+            <span class="title1">Inverse connection</span>: <span>$C_\mathcal{I}=\{(w, q)|w_{i,m}< q_{i,m}<0\}$</span>. Contrary to direct connection,
             if $x_i$ is greater than $\theta_{i,m}$, the synapse outputs `0'. Otherwise, it outputs `1'.
         </p>
 
         <p class="text">
-            <span class="title">Constant-1 connection</span>: <span>$C_1=\{(w, q)|q_{i,m}<0< w_{i,m}\}$ $\bigcup$ $\{(w, q)|q_{i,m}< w_{i,m}<0\}$</span>.
+            <span class="title1">Constant-1 connection</span>: <span>$C_1=\{(w, q)|q_{i,m}<0< w_{i,m}\}$ $\bigcup$ $\{(w, q)|q_{i,m}< w_{i,m}<0\}$</span>.
             In this case, no matter what value the input is, the output of the synapse will remain '1'.
         </p>
 
         <p class="text">
-            <span class="title">Constant-0 connection</span>: <span>$C_0=\{(w, q)|0< w_{i,m}< q_{i,m}\} $ $\bigcup$ $ \{(w, q)|w_{i,m}<0< q_{i,m}\}$<span>.
+            <span class="title1">Constant-0 connection</span>: <span>$C_0=\{(w, q)|0< w_{i,m}< q_{i,m}\} $ $\bigcup$ $ \{(w, q)|w_{i,m}<0< q_{i,m}\}$<span>.
             Similarly, a constant-0 connection implies that the output of the synapse remains `0',
             regardless of the input.
         </p>
 
 
-        <p class="title" id="3">Neural pruning scheme</p>
+        <p class="title1" id="3">Neural pruning scheme</p>
         <p class="text">Depending on the connection cases of the synaptic layer,
             DNM can discard unnecessary synapses and useless branches of dendrites
             by implementing the neural pruning scheme that contains dendritic pruning and synaptic pruning.
         </p>
 
         <p class="text">
-            <span class="title">Dendritic pruning</span>: As shown in Fig. 3, there are two branches of dendrites ($B_1$ and $B_2$) in
+            <span class="title1">Dendritic pruning</span>: As shown in Fig. 3, there are two branches of dendrites ($B_1$ and $B_2$) in
             the structure of DNM in Step 1. On the branch $B_2$, the synaptic layer of the input $x_2$ is in the
             Constant 0 connection case, and the output of this synapse remains at 0. Since the computation operation
             of the dendrite layer is multiplication, regardless of what the values of $x_1$ and $x_2$ are, the output
@@ -319,7 +319,7 @@ MathJax.Hub.Config({
         <p style="text-align: center"><img src="./img/Fig3.png" width="529" ></p>
         <p style="text-align: center">Fig. 3. Simulation of dentritic pruning
         <p class="text">
-            <span class="title">Synaptic pruning</span>: In Fig. 4, DNM has two branches of dendrites ($B_1$ and $B_2$) in the structure,
+            <span class="title1">Synaptic pruning</span>: In Fig. 4, DNM has two branches of dendrites ($B_1$ and $B_2$) in the structure,
             and the branch $B_2$ has a Constant 1 connection input. As introduced above, regardless of what
             the value of the input $x_2$ is, the output of this synapse is always equal to 1. It has no influence
             on the results of the branch. Thus, the final result of soma should ignore the input $x_2$ on this branch,
