@@ -198,7 +198,7 @@ MathJax.Hub.Config({
     </div>
 
     <div class="col-8">
-        <p class="title" id="1" style="margin-top: 5px">Model Description</p>
+                <p class="title" id="1" style="margin-top: 5px">Model Description</p>
         <p class="text">
             DNM is a single neural model with a plastic dendritic structure,
             which was inspired by the realistic neural cell model in biological research.
@@ -214,10 +214,12 @@ MathJax.Hub.Config({
         </p>
         <p style="text-align: center"><img src="./img/gongshi1.png" width="536"></p>
         <p class="text">
-        <div>\begin{equation}</div>
-        <div>Y_{i,m}=\frac{1}{1+e^{-k(w_{i,m}x_i-q_{i,m})}},</div>
-        <div>\label{Eq1}</div>
-        <div>\end{equation}</div>
+        <p>
+            \begin{equation}
+            Y_{i,m}=\frac{1}{1+e^{-k(w_{i,m}x_i-q_{i,m})}},
+            \label{Eq1}
+            \end{equation}
+        </p>
         where $x_i$ is the $i$-th ($i=1, 2, ..., I$) input signal. $Y_{i,m}$ represents
         the output of the $i$-th synapse layer on the $m$-th branch of dendrites, and its range is [0,1].
         In addition, $w_{i,m}$ and $q_{i,m}$ denote the connection parameters, which are randomly generated
@@ -232,18 +234,22 @@ MathJax.Hub.Config({
             DNM:
         </p>
         <p style="text-align: center"><img src="./img/gongshi2.png" width="526"></p>
-        <div>\begin{equation}</div>
-        <div>Z_{m}= \prod_{i=1}^{I}Y_{i,m}.</div>
-        <div>\end{equation}</div>
+        <p>
+            \begin{equation}
+            Z_{m}= \prod_{i=1}^{I}Y_{i,m}.
+            \end{equation}
+        </p>
         <p class="text">
             <span>Membrane layer</span>: On the membrane layer, the signals from each branch of dendritic arbor converge
             and interact with each other. The interaction mechanism of the membrane
             layer can be described by the summation operation which is shown as follows:
         </p>
         <p style="text-align: center"><img src="./img/gongshi3.png" width="529"></p>
-        <div>\begin{equation}</div>
-        <div>V= \sum_{m=1}^{M}Z_{m}.</div>
-        <div>\end{equation}</div>
+        <p>
+        \begin{equation}
+        V= \sum_{m=1}^{M}Z_{m}.
+        \end{equation}
+        </p>
         <p class="text">
             <span>Soma body</span>: Soma body is the core part of a single neural model. Specially, it integrates
             the signals from the membrane layer. Then, the soma compares the results with the threshold
@@ -251,6 +257,11 @@ MathJax.Hub.Config({
             The function of the soma body is expressed by:
         </p>
         <p style="text-align: center"><img src="./img/gongshi4.png" width="530"></p>
+        <p>
+            \begin{equation}
+            O=\frac{1}{1+e^{-k_{soma}(V-\theta _{soma})}},
+            \end{equation}
+        </p>
         <p class="text">
             where $k_{soma}$ and $\theta _{soma}$ are user-defined parameters of the soma body.
             To make the output of the neuron approximate to 1 or 0, $k_{soma}$ and $\theta _{soma}$ are
@@ -268,22 +279,22 @@ MathJax.Hub.Config({
         <p style="text-align: center"><img src="./img/Fig2.png" width="529"></p>
         <p style="text-align: center">Fig. 2. Four connection cases of the synaptic layer.</p>
         <p class="text">
-            <span>Direct connection</span>: $C_\mathcal{D}=\{(w, q)|0<q_{i,m}<w_{i,m}\}$.
+            <span>Direct connection</span>: <span>$C_\mathcal{D}=\{(w, q)|0< q_{i,m}< w_{i,m}\}$</span>.
             In the direct connection case, if the input signal $x_i$ exceeds the synaptic
             threshold $\theta_{i,m}$, the synapse outputs `1'. Otherwise, it outputs `0'.
         </p>
         <p class="text">
-            <span>Inverse connection</span>: $C_\mathcal{I}=\{(w, q)|w_{i,m}<q_{i,m}<0\}$. Contrary to direct connection,
+            <span>Inverse connection</span>: <span>$C_\mathcal{I}=\{(w, q)|w_{i,m}< q_{i,m}<0\}$</span>. Contrary to direct connection,
             if $x_i$ is greater than $\theta_{i,m}$, the synapse outputs `0'. Otherwise, it outputs `1'.
         </p>
 
         <p class="text">
-            <span>Constant-1 connection</span>: $C_1=\{(w, q)|q_{i,m}<0<w_{i,m}\}$ $\bigcup$ $\{(w, q)|q_{i,m}<w_{i,m}<0\}$.
+            <span>Constant-1 connection</span>: <span>$C_1=\{(w, q)|q_{i,m}<0< w_{i,m}\}$ $\bigcup$ $\{(w, q)|q_{i,m}< w_{i,m}<0\}$</span>.
             In this case, no matter what value the input is, the output of the synapse will remain '1'.
         </p>
 
         <p class="text">
-            <span>Constant-0 connection</span>: $C_0=\{(w, q)|0<w_>{i,m}<q_{i,m}\} $ $\bigcup$ $ \{(w, q)|w_{i,m}<0<q_{i,m}\}$.
+            <span>Constant-0 connection</span>: <span>$C_0=\{(w, q)|0< w_{i,m}< q_{i,m}\} $ $\bigcup$ $ \{(w, q)|w_{i,m}<0< q_{i,m}\}$<span>.
             Similarly, a constant-0 connection implies that the output of the synapse remains `0',
             regardless of the input.
         </p>
@@ -330,10 +341,11 @@ MathJax.Hub.Config({
             $w_{i,m}$ and $q_{i,m}$ in the synaptic layer, which can be formulated as:
         </p>
         <p style="text-align: center"><img src="./img/gongshi5.png" width="528"></p>
-        <div>\begin{equation}</div>
-        <div>\theta_{i,m}=\frac{q_{i,m}}{w_{i,m}}.</div>
-        <div>\end{equation}</div>
-
+        <p>
+        \begin{equation}
+        \theta_{i,m}=\frac{q_{i,m}}{w_{i,m}}.
+        \end{equation}
+        </p>
         <p class="text">
             Through the comparators, all the input signals will be transformed
             into binary variables. Since the operation of the dendritic layer is multiplication,
