@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>model</title>
 <!--    <%&#45;&#45;    <link rel="stylesheet" href="/css/model.css">&#45;&#45;%>-->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
     <style>
         body{
             font-family: "Times New Roman";
@@ -244,22 +246,22 @@
         <p style="text-align: center"><img src="./img/Fig2.png" width="529"></p>
         <p style="text-align: center">Fig. 2. Four connection cases of the synaptic layer.</p>
         <p class="text">
-            <span>Direct connection</span>: $C_\mathcal{D}=\{(w, q)|0<q_>{i,m}<w_>{i,m}\}$.
+            <span>Direct connection</span>: $C_\mathcal{D}=\{(w, q)|0<q_{i,m}<w_{i,m}\}$.
             In the direct connection case, if the input signal $x_i$ exceeds the synaptic
             threshold $\theta_{i,m}$, the synapse outputs `1'. Otherwise, it outputs `0'.
         </p>
         <p class="text">
-            <span>Inverse connection</span>: $C_\mathcal{I}=\{(w, q)|w_{i,m}<q_>{i,m}<0\}$. Contrary to direct connection,
+            <span>Inverse connection</span>: $C_\mathcal{I}=\{(w, q)|w_{i,m}<q_{i,m}<0\}$. Contrary to direct connection,
             if $x_i$ is greater than $\theta_{i,m}$, the synapse outputs `0'. Otherwise, it outputs `1'.
         </p>
 
         <p class="text">
-            <span>Constant-1 connection</span>: $C_1=\{(w, q)|q_{i,m}<0<w_>{i,m}\}$ $\bigcup$ $\{(w, q)|q_{i,m}<w_>{i,m}<0\}$.
+            <span>Constant-1 connection</span>: $C_1=\{(w, q)|q_{i,m}<0<w_{i,m}\}$ $\bigcup$ $\{(w, q)|q_{i,m}<w_{i,m}<0\}$.
             In this case, no matter what value the input is, the output of the synapse will remain '1'.
         </p>
 
         <p class="text">
-            <span>Constant-0 connection</span>: $C_0=\{(w, q)|0<w_>{i,m}<q_>{i,m}\} $ $\bigcup$ $ \{(w, q)|w_{i,m}<0<q_>{i,m}\}$.
+            <span>Constant-0 connection</span>: $C_0=\{(w, q)|0<w_>{i,m}<q_{i,m}\} $ $\bigcup$ $ \{(w, q)|w_{i,m}<0<q_{i,m}\}$.
             Similarly, a constant-0 connection implies that the output of the synapse remains `0',
             regardless of the input.
         </p>
