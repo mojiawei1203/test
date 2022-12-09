@@ -214,12 +214,15 @@ MathJax.Hub.Config({
         </p>
         <p style="text-align: center"><img src="./img/gongshi1.png" width="536"></p>
         <p class="text">
-        <p>
+            
+<!--         <p>
             \begin{equation}
             Y_{i,m}=\frac{1}{1+e^{-k(w_{i,m}x_i-q_{i,m})}},
             \label{Eq1}
             \end{equation}
-        </p>
+        </p> -->
+        
+        
         where $x_i$ is the $i$-th ($i=1, 2, ..., I$) input signal. $Y_{i,m}$ represents
         the output of the $i$-th synapse layer on the $m$-th branch of dendrites, and its range is [0,1].
         In addition, $w_{i,m}$ and $q_{i,m}$ denote the connection parameters, which are randomly generated
@@ -234,34 +237,40 @@ MathJax.Hub.Config({
             DNM:
         </p>
         <p style="text-align: center"><img src="./img/gongshi2.png" width="526"></p>
-        <p>
+        
+<!--         <p>
             \begin{equation}
             Z_{m}= \prod_{i=1}^{I}Y_{i,m}.
             \end{equation}
-        </p>
+        </p> -->
+        
         <p class="text">
             <span class="title1">Membrane layer</span>: On the membrane layer, the signals from each branch of dendritic arbor converge
             and interact with each other. The interaction mechanism of the membrane
             layer can be described by the summation operation which is shown as follows:
         </p>
         <p style="text-align: center"><img src="./img/gongshi3.png" width="529"></p>
-        <p>
+        
+<!--         <p>
         \begin{equation}
         V= \sum_{m=1}^{M}Z_{m}.
         \end{equation}
-        </p>
+        </p> -->
+        
         <p class="text">
             <span class="title1">Soma body</span>: Soma body is the core part of a single neural model. Specially, it integrates
             the signals from the membrane layer. Then, the soma compares the results with the threshold
             of the soma; if it is larger, the neuron will fire; otherwise, it will not fire.
             The function of the soma body is expressed by:
         </p>
+        
         <p style="text-align: center"><img src="./img/gongshi4.png" width="530"></p>
         <p>
-            \begin{equation}
+<!--             \begin{equation}
             O=\frac{1}{1+e^{-k_{soma}(V-\theta _{soma})}},
-            \end{equation}
+            \end{equation} -->
         </p>
+        
         <p class="text">
             where $k_{soma}$ and $\theta _{soma}$ are user-defined parameters of the soma body.
             To make the output of the neuron approximate to 1 or 0, $k_{soma}$ and $\theta _{soma}$ are
@@ -341,11 +350,13 @@ MathJax.Hub.Config({
             $w_{i,m}$ and $q_{i,m}$ in the synaptic layer, which can be formulated as:
         </p>
         <p style="text-align: center"><img src="./img/gongshi5.png" width="528"></p>
-        <p>
+            
+<!--         <p>
         \begin{equation}
         \theta_{i,m}=\frac{q_{i,m}}{w_{i,m}}.
         \end{equation}
-        </p>
+        </p> -->
+            
         <p class="text">
             Through the comparators, all the input signals will be transformed
             into binary variables. Since the operation of the dendritic layer is multiplication,
