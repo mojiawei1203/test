@@ -383,22 +383,22 @@ MathJax.Hub.Config({
             var scrollTop =document.documentElement.scrollTop||document.body.scrollTop
             console.log("滚动距离"+scrollTop);
             const list = document.querySelectorAll('.menu a')
-             if(scrollTop<1700){
+             if(scrollTop<1550){
                 list.forEach(title=>{
                     title.classList=[];
                 })
                 list[0].classList.add('active')
-            }else if(scrollTop>1710&&scrollTop<2500){
+            }else if(scrollTop>1560&&scrollTop<2100){
                 list.forEach(title=>{
                     title.classList=[];
                 })
                 list[1].classList.add('active')
-            }else if(scrollTop>2150&&scrollTop<3200){
+            }else if(scrollTop>2150&&scrollTop<3100){
                 list.forEach(title=>{
                     title.classList=[];
                 })
                 list[2].classList.add('active')
-            }else if(scrollTop>3210&&scrollTop<3700){
+            }else if(scrollTop>3110&&scrollTop<3700){
                 list.forEach(title=>{
                     title.classList=[];
                 })
